@@ -140,11 +140,7 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void
             Featured
           </span>
         )}
-        {project.media.length > 1 && (
-          <span className="absolute bottom-2 right-2 text-xs px-2 py-0.5 rounded-full bg-black/50 text-white/80 backdrop-blur-sm">
-            {project.media.length} photos
-          </span>
-        )}
+
       </div>
 
       <div className="p-4">
