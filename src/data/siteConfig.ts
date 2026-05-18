@@ -1,28 +1,25 @@
 // ─────────────────────────────────────────────
 // siteConfig.ts — Global site settings
-// Edit this file to update your name, tagline,
-// avatar, and which sections are visible + their order.
 // ─────────────────────────────────────────────
 
 export const siteConfig = {
   owner: {
-    name: 'TODO: Your Name',
-    tagline: 'TODO: Your tagline — e.g. "QA Engineer · App Developer · Photographer"',
-    bio: 'TODO: Short 2–3 sentence bio. Filled in Phase 2 from your resume/cover letter.',
-    avatarUrl: '/images/avatar-placeholder.jpg', // Replace with your photo in Phase 3
-    email: 'TODO: your@email.com',
-    linkedin: 'https://www.linkedin.com/in/TODO', // Your LinkedIn profile URL
-    github: 'https://github.com/TODO',            // Optional — remove if not needed
+    name: 'Brent Lichtenberg',
+    tagline: 'QA Lead · Test Automation · AI-Forward Engineer',
+    bio: "I'm a QA leader with 10+ years of experience building quality programs from the ground up at companies like Amazon, Apple, and Microsoft. I take pride in knowing how to do things the manual way — and I genuinely enjoy it sometimes — but I'll be straight with you: AI makes me 10x more productive, and I lean into that without apology. These days I'm also building iOS apps, shipping automation tooling, and still making sure every release is bug-free.",
+    avatarUrl: 'TODO: /images/your-photo.jpg',  // Replace with your photo in Phase 3
+    email: 'brentlichtenberg@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/brentlichtenberg/',
+    github: 'https://github.com/Brentlichtenberg',
   },
   sections: [
-    // Order here = render order. Set enabled: false to hide a section.
     { id: 'hero',       enabled: true  },
     { id: 'skills',     enabled: true  },
     { id: 'timeline',   enabled: true  },
     { id: 'projects',   enabled: true  },
     { id: 'references', enabled: true  },
-    { id: 'gallery',    enabled: false }, // Enable in Phase 3 when photos are ready
-    { id: 'music',      enabled: false }, // Enable in Phase 3 if desired
+    { id: 'gallery',    enabled: false },
+    { id: 'music',      enabled: false },
   ],
 } as const;
 

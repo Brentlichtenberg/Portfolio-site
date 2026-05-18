@@ -1,19 +1,14 @@
-// ─────────────────────────────────────────────
-// skills.ts — Skills by category + interests
-// Populated in Phase 2 from your resume.
-// ─────────────────────────────────────────────
-
 export interface SkillItem {
   name: string;
-  level?: 'Expert' | 'Proficient' | 'Familiar'; // Optional proficiency label
+  level?: 'Expert' | 'Proficient' | 'Familiar';
 }
 
 export interface SkillCategory {
   id: string;
   title: string;
-  icon: string;  // emoji or icon name
-  color: string; // Tailwind background class for the card accent
-  summary: string; // Shown collapsed
+  icon: string;
+  color: string;
+  summary: string;
   skills: SkillItem[];
 }
 
@@ -23,25 +18,36 @@ export const skillCategories: SkillCategory[] = [
     title: 'QA & Testing',
     icon: '🔍',
     color: 'blue',
-    summary: 'Primary expertise — website and mobile app quality assurance.',
+    summary: 'Primary expertise — 10+ years building quality programs for web and mobile products from the ground up.',
     skills: [
-      { name: 'TODO: e.g. Selenium', level: 'Expert' },
-      { name: 'TODO: e.g. Playwright', level: 'Proficient' },
-      { name: 'TODO: e.g. LambdaTest', level: 'Expert' },
-      { name: 'TODO: e.g. TestRail', level: 'Proficient' },
-      { name: 'TODO: e.g. Jira', level: 'Expert' },
+      { name: 'Test Planning & Strategy',          level: 'Expert' },
+      { name: 'Selenium WebDriver (Node.js)',       level: 'Expert' },
+      { name: 'API Testing — Postman',             level: 'Expert' },
+      { name: 'Release Management & UAT',          level: 'Expert' },
+      { name: 'Regression & Root Cause Analysis',  level: 'Expert' },
+      { name: 'Performance Testing',               level: 'Proficient' },
+      { name: 'Security Testing — OWASP ZAP',      level: 'Proficient' },
+      { name: 'SOC Compliance & Pen Testing',      level: 'Proficient' },
+      { name: 'CI/CD Pipeline Integration',        level: 'Proficient' },
+      { name: 'Defect Tracking — Jira',            level: 'Expert' },
+      { name: 'Agile / Scrum / Waterfall',         level: 'Expert' },
+      { name: 'AI / Automated Testing',            level: 'Proficient' },
     ],
   },
   {
-    id: 'mobile-dev',
-    title: 'Mobile App Development',
-    icon: '📱',
+    id: 'ai-tech',
+    title: 'AI & Technology',
+    icon: '🤖',
     color: 'violet',
-    summary: 'iOS and cross-platform app development.',
+    summary: 'AI-forward practitioner — using AI tooling to multiply productivity across every discipline.',
     skills: [
-      { name: 'TODO: e.g. Swift / SwiftUI', level: 'Proficient' },
-      { name: 'TODO: e.g. React Native', level: 'Familiar' },
-      { name: 'TODO: e.g. Xcode', level: 'Proficient' },
+      { name: 'AI-Assisted Development & QA',  level: 'Expert' },
+      { name: 'LLM Evaluation & Validation',   level: 'Proficient' },
+      { name: 'NLU/NLM Behavior Testing',      level: 'Proficient' },
+      { name: 'ML Data Collection & Annotation', level: 'Proficient' },
+      { name: 'iOS App Development (Swift)',    level: 'Familiar' },
+      { name: 'Python (Scripting & UI Testing)', level: 'Familiar' },
+      { name: 'AWS S3 / Cloud Workflows',       level: 'Familiar' },
     ],
   },
   {
@@ -49,11 +55,10 @@ export const skillCategories: SkillCategory[] = [
     title: 'Photography',
     icon: '📷',
     color: 'amber',
-    summary: 'Capturing moments — TODO: your photography style.',
+    summary: 'Capturing moments — details and gear added in Phase 3.',
     skills: [
-      { name: 'TODO: e.g. Lightroom', level: 'Proficient' },
-      { name: 'TODO: e.g. Portrait Photography' },
-      { name: 'TODO: e.g. Landscape Photography' },
+      { name: 'TODO: Photography style/genre — filled in Phase 3' },
+      { name: 'TODO: Tools/software — e.g. Lightroom, Capture One' },
     ],
   },
   {
@@ -61,10 +66,9 @@ export const skillCategories: SkillCategory[] = [
     title: 'Music',
     icon: '🎵',
     color: 'emerald',
-    summary: 'TODO: Short description of your musical background.',
+    summary: 'Musical background — details added in Phase 3.',
     skills: [
-      { name: 'TODO: e.g. Guitar', level: 'Proficient' },
-      { name: 'TODO: e.g. Music Production' },
+      { name: 'TODO: Instruments / production — filled in Phase 3' },
     ],
   },
 ];
@@ -75,8 +79,10 @@ export interface Interest {
 }
 
 export const interests: Interest[] = [
-  { label: 'TODO: Interest 1', icon: '🎯' },
-  { label: 'TODO: Interest 2', icon: '🌄' },
-  { label: 'TODO: Interest 3', icon: '🎸' },
-  { label: 'TODO: Interest 4', icon: '📸' },
+  { label: 'AI & Emerging Tech',     icon: '🤖' },
+  { label: 'iOS App Development',    icon: '📱' },
+  { label: 'Photography',            icon: '📷' },
+  { label: 'Music',                  icon: '🎵' },
+  { label: 'Robotics & Raspberry Pi', icon: '🔧' },
+  { label: 'Quality Engineering',    icon: '🔍' },
 ];
