@@ -31,4 +31,14 @@ export const references: Reference[] = [
     text: 'During his time with us, Brent was a cornerstone of our quality assurance efforts. As a leader in our Quality Control division, he not only delivered meticulous, high-quality code reviews but also effectively managed and supported his team. Brent is what I would describe as \'steady as a clock\'—an incredibly reliable professional with an honorable, dedicated work ethic. He earned the deep respect of both our internal colleagues and our external partners through his polite demeanor and consistent, positive contributions. Any organization looking for a dependable, high-character QC professional would be incredibly lucky to have Brent on their team.',
     linkedinUrl: 'https://www.linkedin.com/in/brentlichtenberg/',
   },
+  {
+    id: 'ref-alejandro-leon',
+    name: 'Alejandro Leon',
+    title: 'Leader in Product Training, e-Learning & Product Management | 15+ Years in Tech & Education',
+    company: 'LIXIL',
+    relationship: 'Colleagues on different teams at LIXIL',
+    date: 'February 2026',
+    text: 'I truly enjoyed collaborating with Brent whenever our paths crossed. Even though we weren\'t on the same team, he always made himself available to help and share his knowledge. Brent has a gift for making things clear through his demos, which were not only useful but also engaging. What I appreciated most was his openness. He listened to suggestions, welcomed different perspectives, and always took the time to answer questions thoughtfully. Working with Brent felt easy and rewarding, and I\'m grateful for the positive energy he brought to every interaction.',
+    linkedinUrl: 'https://www.linkedin.com/in/brentlichtenberg/',
+  },
 ];
