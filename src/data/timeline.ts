@@ -32,7 +32,7 @@ export const timelineEntries: TimelineEntry[] = [
 • SME — Functioned as product SME for leadership and client demos including C-level audiences, translating QA risk into business impact.
 
 Late-tenure bonus: transitioned into a concurrent Product Sourcing & Logistics role (Nov 2025–Mar 2026) as SME for a new project, defining Jira acceptance criteria, designing workflows/SOPs, and managing vendor relationships in SAP Ariba.`,
-    tags: ['QA Strategy', 'Selenium', 'Node.js', 'Postman', 'CI/CD', 'Security Testing', 'SOC Compliance', 'Agile', 'AI/ML'],
+    tags: ['QA Strategy', 'Selenium', 'Node.js', 'Postman', 'CI/CD', 'Security Testing', 'SOC Compliance', 'Agile', 'AI/ML', 'Product Management', 'Logistics'],
   },
   {
     id: 'apple-test-engineer',
