@@ -21,23 +21,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'alexa-prime-day',
-    title: 'Alexa Prime Day 2017',
-    category: 'qa',
-    tagline: 'Led quality for Amazon\'s Alexa voice shopping during the biggest sales day of the year.',
-    description: `Voice shopping via Alexa for Prime Day 2017 was the result of three teams working in concert. I served as project manager for my team, organizing and executing the test and verification process and selecting the most effective targeted keywords.
-
-On an average week my team handled 15–20 products for testing and configuration. During the 4-week Prime Day prep period, that scaled to ~125 product promos per week — and thanks to the processes I'd established beforehand, the team exceeded all time goals by 85%.
-
-This project remains a career highlight. It taught me how to build repeatable processes that hold up under pressure, and how to get the best out of a team when the stakes are high.`,
-    media: [
-      { type: 'image', url: '/images/project-alexa-placeholder.jpg', alt: 'Alexa Prime Day project' },
-    ],
-    tags: ['Amazon', 'Alexa', 'NLU/NLM', 'Voice AI', 'Test Management', 'Project Management'],
-    links: [{ label: 'View on Amazon', url: 'https://www.amazon.com/Alexa/deals' }],
-    featured: true,
-  },
-  {
     id: 'isrd-qa-program',
     title: 'ISRD QA Program Build',
     category: 'qa',
@@ -54,29 +37,35 @@ Key achievements:
 
 The client generates over a billion dollars in sales annually. Quality wasn't optional.`,
     media: [
-      { type: 'image', url: '/images/project-isrd-placeholder.jpg', alt: 'ISRD QA Program' },
+      {
+        type: 'image',
+        url: 'https://image.thum.io/get/width/800/crop/600/https://staging.labs.lixil.com/',
+        alt: 'LIXIL AS staging portal — the product Brent built the QA program for',
+      },
     ],
     tags: ['QA Strategy', 'Selenium', 'Node.js', 'CI/CD', 'Security', 'SOC Compliance', 'Postman'],
-    links: [],
+    links: [{ label: 'View Staging Site', url: 'https://staging.labs.lixil.com/' }],
     featured: true,
   },
   {
-    id: 'apple-aiml',
-    title: 'Apple AI/ML Visual Model',
-    category: 'qa',
-    tagline: 'Data collection and quality for Apple\'s visual recognition AI/ML model.',
-    description: `Embedded with Apple's data science team to support visual AI/ML model training and validation.
-
-Led a field team in rapid data collection — scouting locations, establishing scenario setups, and solving real-world field problems like device overheating that was causing unacceptable data loss.
-
-The overheating fix: found a compatible 3P cooling device that eliminated ALL data loss. Simple solution, significant impact.
-
-Also contributed to the data collection app by providing product feedback and ideas to the development team.`,
+    id: 'photography',
+    title: 'Photography',
+    category: 'photography',
+    tagline: 'Documenting my life in Western Washington and travels beyond.',
+    description: 'A collection of photography from the Pacific Northwest and beyond — landscapes, travel, and moments worth keeping.',
     media: [
-      { type: 'image', url: '/images/project-apple-placeholder.jpg', alt: 'Apple AI/ML project' },
+      { type: 'image', url: '/images/photography/banner.jpg', alt: 'Photography — Western Washington' },
+      { type: 'image', url: '/images/photography/carousel-1.jpg', alt: 'Photo 1' },
+      { type: 'image', url: '/images/photography/carousel-2.jpg', alt: 'Photo 2' },
+      { type: 'image', url: '/images/photography/carousel-3.jpg', alt: 'Photo 3' },
+      { type: 'image', url: '/images/photography/carousel-4.jpg', alt: 'Photo 4' },
+      { type: 'image', url: '/images/photography/carousel-5.jpg', alt: 'Photo 5' },
+      { type: 'image', url: '/images/photography/carousel-6.jpg', alt: 'Photo 6' },
+      { type: 'image', url: '/images/photography/carousel-7.jpg', alt: 'Photo 7' },
     ],
-    tags: ['Apple', 'AI/ML', 'Data Collection', 'Annotation', 'AWS S3', 'Team Lead'],
+    tags: ['Photography', 'Travel'],
     links: [],
+    featured: false,
   },
   {
     id: 'ios-app',

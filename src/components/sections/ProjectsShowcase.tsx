@@ -17,6 +17,85 @@ const CATEGORY_COLORS: Record<Project['category'], string> = {
   creative:    'bg-emerald-900/50 text-emerald-300 border-emerald-700/40',
 };
 
+function MediaCarousel({ project }: { project: Project }) {
+  const [index, setIndex] = useState(0);
+  const media = project.media.filter(m => !m.url.includes('TODO'));
+  const current = media[index];
+
+  if (!media.length) {
+    return (
+      <div className="w-full h-full flex flex-col items-center justify-center text-slate-600">
+        <span className="text-5xl mb-3">🖼</span>
+        <span className="text-sm">Media added in Phase 3</span>
+      </div>
+    );
+  }
+
+  const prev = () => setIndex((i) => (i - 1 + media.length) % media.length);
+  const next = () => setIndex((i) => (i + 1) % media.length);
+
+  return (
+    <div className="relative w-full h-full">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={index}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
+          className="absolute inset-0"
+        >
+          {current.type === 'video' ? (
+            <ReactPlayer
+              src={current.url}
+              width="100%"
+              height="100%"
+              controls
+              playing={false}
+              light={current.poster}
+            />
+          ) : (
+            <img
+              src={current.url}
+              alt={current.alt ?? project.title}
+              className="w-full h-full object-cover"
+            />
+          )}
+        </motion.div>
+      </AnimatePresence>
+
+      {media.length > 1 && (
+        <>
+          <button
+            onClick={prev}
+            aria-label="Previous"
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 text-white text-xl backdrop-blur-sm transition-colors"
+          >
+            ‹
+          </button>
+          <button
+            onClick={next}
+            aria-label="Next"
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 text-white text-xl backdrop-blur-sm transition-colors"
+          >
+            ›
+          </button>
+          <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
+            {media.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setIndex(i)}
+                aria-label={`Go to photo ${i + 1}`}
+                className={`w-1.5 h-1.5 rounded-full transition-all ${i === index ? 'bg-white scale-125' : 'bg-white/40 hover:bg-white/70'}`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
 function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void }) {
   const firstMedia = project.media[0];
   const isVideo = firstMedia?.type === 'video';
@@ -30,7 +109,6 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void
       className="group bg-slate-900/60 border border-slate-800 rounded-xl overflow-hidden hover:border-slate-700 transition-all cursor-pointer"
       onClick={onOpen}
     >
-      {/* Thumbnail */}
       <div className="relative aspect-video bg-slate-800 overflow-hidden">
         {firstMedia && !firstMedia.url.includes('TODO') ? (
           isVideo ? (
@@ -54,7 +132,6 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void
           </div>
         )}
 
-        {/* Category badge */}
         <span className={`absolute top-2 left-2 text-xs px-2 py-0.5 rounded-full border ${CATEGORY_COLORS[project.category]}`}>
           {CATEGORY_LABELS[project.category]}
         </span>
@@ -63,9 +140,13 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: () => void
             Featured
           </span>
         )}
+        {project.media.length > 1 && (
+          <span className="absolute bottom-2 right-2 text-xs px-2 py-0.5 rounded-full bg-black/50 text-white/80 backdrop-blur-sm">
+            {project.media.length} photos
+          </span>
+        )}
       </div>
 
-      {/* Content */}
       <div className="p-4">
         <h3 className="font-semibold text-white text-base mb-1">{project.title}</h3>
         <p className="text-sm text-slate-400 line-clamp-2 mb-3">{project.tagline}</p>
@@ -114,34 +195,10 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
         transition={{ duration: 0.25 }}
         className="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto"
       >
-        {/* Media */}
-        {project.media[0] && (
-          <div className="aspect-video bg-slate-800 rounded-t-2xl overflow-hidden">
-            {project.media[0].type === 'video' && !project.media[0].url.includes('TODO') ? (
-              <ReactPlayer
-                src={project.media[0].url}
-                width="100%"
-                height="100%"
-                controls
-                playing={false}
-                light={project.media[0].poster}
-              />
-            ) : project.media[0].type === 'image' && !project.media[0].url.includes('TODO') ? (
-              <img
-                src={project.media[0].url}
-                alt={project.media[0].alt ?? project.title}
-                className="w-full h-full object-cover"
-              />
-            ) : (
-              <div className="w-full h-full flex flex-col items-center justify-center text-slate-600">
-                <span className="text-5xl mb-3">🖼</span>
-                <span className="text-sm">Media added in Phase 3</span>
-              </div>
-            )}
-          </div>
-        )}
+        <div className="aspect-video bg-slate-800 rounded-t-2xl overflow-hidden">
+          <MediaCarousel project={project} />
+        </div>
 
-        {/* Content */}
         <div className="p-6">
           <div className="flex items-start justify-between gap-4 mb-4">
             <div>
@@ -162,7 +219,6 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
 
           <p className="text-slate-300 leading-relaxed mb-5 whitespace-pre-line">{project.description}</p>
 
-          {/* Tags */}
           {project.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-5">
               {project.tags.map((tag) => (
@@ -173,7 +229,6 @@ function ProjectModal({ project, onClose }: { project: Project; onClose: () => v
             </div>
           )}
 
-          {/* Links */}
           {project.links.length > 0 && (
             <div className="flex flex-wrap gap-3">
               {project.links.map((link) => (
