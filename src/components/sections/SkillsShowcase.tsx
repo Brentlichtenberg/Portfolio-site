@@ -100,7 +100,7 @@ export function SkillsShowcase() {
           <p className="text-slate-400 mt-3">Click a category to expand the full skill list.</p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-4 mb-16">
+        <div className="grid sm:grid-cols-2 gap-4 mb-16 items-start">
           {skillCategories.map((cat) => (
             <CategoryCard key={cat.id} category={cat} />
           ))}

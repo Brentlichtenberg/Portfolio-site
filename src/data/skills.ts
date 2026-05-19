@@ -51,24 +51,13 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    id: 'photography',
-    title: 'Photography',
-    icon: '📷',
+    id: 'product-management',
+    title: 'Product Management',
+    icon: '📋',
     color: 'amber',
-    summary: 'Capturing moments — details and gear added in Phase 3.',
+    summary: 'Product ownership, requirements definition, and cross-functional delivery — details coming soon.',
     skills: [
-      { name: 'TODO: Photography style/genre — filled in Phase 3' },
-      { name: 'TODO: Tools/software — e.g. Lightroom, Capture One' },
-    ],
-  },
-  {
-    id: 'music',
-    title: 'Music',
-    icon: '🎵',
-    color: 'emerald',
-    summary: 'Musical background — details added in Phase 3.',
-    skills: [
-      { name: 'TODO: Instruments / production — filled in Phase 3' },
+      { name: 'TODO: Fill in Product Management skills' },
     ],
   },
 ];
@@ -84,5 +73,6 @@ export const interests: Interest[] = [
   { label: 'Photography',            icon: '📷' },
   { label: 'Music',                  icon: '🎵' },
   { label: 'Robotics & Raspberry Pi', icon: '🔧' },
-  { label: 'Quality Engineering',    icon: '🔍' },
+  { label: 'History',                icon: '📜' },
+  { label: 'Literature',             icon: '📚' },
 ];
