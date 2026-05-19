@@ -61,21 +61,39 @@ function CategoryCard({ category }: { category: SkillCategory }) {
             className="overflow-hidden"
           >
             <div className="pt-4 mt-3 border-t border-white/5">
-              <ul className="space-y-2">
-                {category.skills.map((skill) => (
-                  <li key={skill.name} className="flex items-center justify-between gap-2">
-                    <div className="flex items-center gap-2">
-                      <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${colors.dot}`} />
-                      <span className="text-sm text-slate-300">{skill.name}</span>
-                    </div>
-                    {skill.level && (
-                      <span className={`text-xs font-medium ${LEVEL_COLOR[skill.level] ?? 'text-slate-400'}`}>
-                        {skill.level}
+              {category.description && (
+                <p className="text-sm text-slate-400 mb-4 leading-relaxed">{category.description}</p>
+              )}
+              {category.bullets && category.bullets.length > 0 && (
+                <ul className="space-y-3 mb-4">
+                  {category.bullets.map((b, i) => (
+                    <li key={i} className="flex gap-2">
+                      <span className={`w-1.5 h-1.5 rounded-full shrink-0 mt-1.5 ${colors.dot}`} />
+                      <span className="text-sm text-slate-300 leading-relaxed">
+                        {b.label && <span className="font-semibold text-white">{b.label} — </span>}
+                        {b.text}
                       </span>
-                    )}
-                  </li>
-                ))}
-              </ul>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {category.skills.length > 0 && (
+                <ul className="space-y-2">
+                  {category.skills.map((skill) => (
+                    <li key={skill.name} className="flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-2">
+                        <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${colors.dot}`} />
+                        <span className="text-sm text-slate-300">{skill.name}</span>
+                      </div>
+                      {skill.level && (
+                        <span className={`text-xs font-medium ${LEVEL_COLOR[skill.level] ?? 'text-slate-400'}`}>
+                          {skill.level}
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </motion.div>
         )}

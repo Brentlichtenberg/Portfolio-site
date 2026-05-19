@@ -9,6 +9,8 @@ export interface SkillCategory {
   icon: string;
   color: string;
   summary: string;
+  description?: string;
+  bullets?: { label?: string; text: string }[];
   skills: SkillItem[];
 }
 
@@ -55,10 +57,17 @@ export const skillCategories: SkillCategory[] = [
     title: 'Product Management',
     icon: '📋',
     color: 'amber',
-    summary: 'Product ownership, requirements definition, and cross-functional delivery — details coming soon.',
-    skills: [
-      { name: 'TODO: Fill in Product Management skills' },
+    summary: 'Provided feature specifications for new products and feedback for acceptance criteria.',
+    description: 'After delivering our client\'s product I was asked to switch to a different role for a new project as subject matter expert in our partner\'s product line, ordering, and logistics.',
+    bullets: [
+      { label: 'Product Knowledge', text: 'Led sourcing for bathroom remodelling products across ASHS and external vendors (Ferguson, Lowe\'s), aligning catalog decisions with business and product priorities.' },
+      { label: 'Documentation', text: 'Partnered with leadership to design workflows and SOPs, translating operational requirements into clear developer build guidance.' },
+      { label: 'Product Management', text: 'Defined acceptance criteria in Jira to improve delivery clarity, reduce rework, and align engineering output with supply chain operations.' },
+      { text: 'Drove external discovery with vendor partners to map their processes and use their operational groundwork to shape product capabilities.' },
+      { label: 'Cross-team Collaboration', text: 'Managed vendor communications and account setup, including outreach to reps and creation of company user access.' },
+      { label: 'Logistics', text: 'Built working knowledge of SAP Ariba to support procurement workflows, vendor collaboration, and purchasing operations.' },
     ],
+    skills: [],
   },
 ];
 
