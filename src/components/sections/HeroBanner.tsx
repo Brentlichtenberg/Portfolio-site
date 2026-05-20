@@ -34,12 +34,12 @@ export function HeroBanner() {
           transition={{ duration: 0.5 }}
           className="mb-8 flex justify-center"
         >
-          <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-full bg-slate-700 border-4 border-blue-500/50 flex items-center justify-center overflow-hidden">
-            <span className="text-slate-400 text-xs text-center px-2">
-              {owner.avatarUrl.includes('TODO') ? 'Photo\nPhase 3' : (
-                <img src={owner.avatarUrl} alt={owner.name} className="w-full h-full object-cover" />
-              )}
-            </span>
+          <div className="w-48 h-36 sm:w-64 sm:h-48 rounded-xl bg-slate-700 border-4 border-blue-500/50 flex items-center justify-center overflow-hidden">
+            {owner.avatarUrl.includes('TODO') ? (
+              <span className="text-slate-400 text-xs text-center px-2">Photo Phase 3</span>
+            ) : (
+              <img src={owner.avatarUrl} alt={owner.name} className="w-full h-full object-cover object-top" />
+            )}
           </div>
         </motion.div>
 
